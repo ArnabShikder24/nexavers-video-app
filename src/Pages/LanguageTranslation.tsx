@@ -139,6 +139,9 @@ const LanguageTranslation : React.FC = () => {
                 <Segment />
                 <Segment />
 
+                <div className='mt-10 flex justify-center'>
+                    <button className="border border-[#0269D0] text-[#0269D0] px-24 py-3 cursor-pointer rounded">Generate video</button>
+                </div>
             </div>
         </div>
     );
