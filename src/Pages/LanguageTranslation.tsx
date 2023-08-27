@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { TreeSelect } from 'antd';
+import { Input, TreeSelect } from 'antd';
 import { DownOutlined, CaretDownFilled } from '@ant-design/icons';
 
 const treeData = [
@@ -42,6 +42,12 @@ const Segment: React.FC = () => {
                             <p className="border border-[#08AA43] px-2 py-1 cursor-pointer rounded">Active version</p>
                         </div>
                         <p className='mt-6'><span className='font-semibold'>Text:</span> Speaker 1 (female): Hii there, how are you?</p>
+                        <div className='flex items-center justify-evenly'>
+                            <p>Edit text :</p>
+                            <Input placeholder="" />
+                            <p className="border border-[#0269D0] px-2 py-1 cursor-pointer rounded">Add new version</p>
+                            <p className="border border-[#0269D0] px-2 py-1 cursor-pointer rounded">Generate next step</p>
+                        </div>
                     </div>
                 </div>
             </div>
