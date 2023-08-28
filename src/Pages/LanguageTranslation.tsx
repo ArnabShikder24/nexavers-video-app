@@ -110,7 +110,7 @@ const LanguageTranslation : React.FC = () => {
     return (
         <div className='pb-10'>
             <h1 className='text-base font-semibold'>Original video</h1>
-            <div className='w-[400px] h-72 bg-slate-200 mt-3' />
+            <div className='w-[500px] h-72 bg-slate-200 mt-3' />
             <h1 className='text-base font-semibold mt-12'>Language  Translation</h1>
             <p className='text-slate-600'>Choose language from select language which you want to translate All audio text in to that language. </p>
             <div className="w-[400px]">
