@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import logo from '../assets/icons/logo.svg';
 import user from '../assets/icons/Mask group.png';
 import { Layout } from 'antd';
-import { DownOutlined, UserOutlined } from '@ant-design/icons';
+import { DownOutlined, UserOutlined, LogoutOutlined, DollarOutlined } from '@ant-design/icons';
 import userLogo from '../assets/images/Mask group.png';
 
 const { Header } = Layout;
@@ -29,15 +29,15 @@ const NavBar: React.FC = () => {
               <div className='mt-4 text-[#5E637E]'>
                 <div className='flex gap-3 items-center cursor-pointer'>
                   <UserOutlined className="text-xl" />
-                  <p className='text-lg'>My Profile</p>
+                  <p className='text-base'>My Profile</p>
                 </div>
                 <div className='flex gap-3 items-center mt-2 cursor-pointer'>
-                  <UserOutlined className="text-xl" />
-                  <p className='text-lg'>Payments & charges</p>
+                  <DollarOutlined className="text-xl" />
+                  <p className='text-base'>Payments & charges</p>
                 </div>
                 <div className='flex gap-3 items-center mt-2 cursor-pointer'>
-                  <UserOutlined className="text-xl" />
-                  <p className='text-lg'>Logout</p>
+                  <LogoutOutlined className="text-xl" />
+                  <p className='text-base'>Logout</p>
                 </div>
               </div>
             </div>
