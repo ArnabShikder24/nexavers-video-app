@@ -2,7 +2,7 @@ import React from 'react';
 import { CloudUploadOutlined } from '@ant-design/icons';
 import studio from '../assets/icons/Group 36099.svg';
 
-const Home = () => {
+const Home: React.FC = () => {
     return (
         <div className="flex justify-center items-center h-full">
             <div className="rounded-lg text-center border-4 border-[#0269D0] px-32 py-12">
