@@ -6,6 +6,7 @@ import MainLayout from "./layouts";
 import Home from "./Pages/Home";
 import LanguageTranslation from "./Pages/LanguageTranslation";
 import Login from "./Pages/Login";
+import SignUp from "./Pages/SignUp";
 
 const App: React.FC = () => {
   return (
@@ -16,6 +17,7 @@ const App: React.FC = () => {
           <Route path={pathnames.LanguageTranslation} element={<LanguageTranslation />} />
         </Route>
         <Route path={pathnames.login} element={<Login />} />
+        <Route path={pathnames.signUp} element={<SignUp />} />
       </Routes>
     </div>
   );

@@ -3,8 +3,8 @@ const pathnames = {
   home: "/",
   LanguageTranslation: 'language-translation',
   login: 'login',
+  signUp: 'signup',
   notFound: "*",
 };
 
-// export
 export default pathnames;
