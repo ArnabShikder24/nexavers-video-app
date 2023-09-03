@@ -1,7 +1,7 @@
-import React from 'react';
-import { HomeFilled, TranslationOutlined, BellFilled, QuestionCircleFilled, PlusOutlined } from '@ant-design/icons';
+import React, { useState } from 'react';
+import { HomeFilled, TranslationOutlined, BellFilled, QuestionCircleFilled, PlusOutlined, CloudUploadOutlined } from '@ant-design/icons';
 import type { MenuProps } from 'antd';
-import { Menu } from 'antd';
+import { Menu, Modal } from 'antd';
 
 const items1: MenuProps['items'] = [
     { icon: <HomeFilled />, label: "Home" },
@@ -28,12 +28,13 @@ const items2: MenuProps['items'] = [
     },
   );
 
-const Sidebar : React.FC = () => {
+const Sidebar: React.FC = () => {
+  const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
     return (
         <div className='flex flex-col h-full justify-between'>
         <div>
           <div className="flex justify-center">
-            <button className="flex items-center gap-3 px-10 py-2 rounded text-white bg-gradient-to-r from-[#022797] to-[#0266CA]">
+            <button onClick={() => setIsModalOpen(true)} className="flex items-center gap-3 px-10 py-2 rounded text-white bg-gradient-to-r from-[#022797] to-[#0266CA]">
                 <PlusOutlined />
                 <span className="text-sm">Upload New </span>
             </button>
@@ -55,6 +56,16 @@ const Sidebar : React.FC = () => {
               items={items2}
           />
         </div>
+        <Modal
+          title={<div className='flex items-center justify-center gap-5'><CloudUploadOutlined className='text-3xl' /><h1 className="text-semibold text-lg text-center">Upload video</h1></div>}
+          open={isModalOpen}
+          onCancel={() => setIsModalOpen(false)}
+          footer={null}
+        >
+          <p>Some contents...</p>
+          <p>Some contents...</p>
+          <p>Some contents...</p>
+        </Modal>
         </div>
     );
 };
