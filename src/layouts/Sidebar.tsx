@@ -8,8 +8,9 @@ import {
   CloudUploadOutlined,
 } from "@ant-design/icons";
 import type { MenuProps } from "antd";
-import { Menu, Modal } from "antd";
+import { Menu, Modal, Input, TreeSelect  } from "antd";
 import flim from '../assets/icons/Group 36099.svg';
+import youtube from '../assets/icons/youtube.png';
 
 const items1: MenuProps["items"] = [
   { icon: <HomeFilled />, label: "Home" },
@@ -32,9 +33,31 @@ const items2: MenuProps["items"] = [
   };
 });
 
+const treeData = [
+  {
+    value: 'Autodetected',
+    title: 'Autodetected',
+  }
+];
+
+const treeData2 = [
+  {
+    value: 'Hindi',
+    title: 'Hindi',
+  },
+  {
+    value: 'English',
+    title: 'English',
+  },
+  {
+    value: 'Bangla',
+    title: 'Bangla',
+  },
+];
 const Sidebar: React.FC = () => {
   const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
   const [selectedFile, setSelectedFile] = useState<File | null>(null);
+  const [value, setValue] = useState<string>();
 
   const handleFileSelect = (e: React.ChangeEvent<HTMLInputElement>) => {
     const file = e.target.files?.[0];
@@ -49,6 +72,10 @@ const Sidebar: React.FC = () => {
 
   const handleDragOver = (e: React.DragEvent<HTMLDivElement>) => {
     e.preventDefault();
+  };
+
+  const onChange = (newValue: string) => {
+    setValue(newValue);
   };
   return (
     <div className="flex flex-col h-full justify-between">
@@ -91,7 +118,7 @@ const Sidebar: React.FC = () => {
         onCancel={() => setIsModalOpen(false)}
         footer={null}
       >
-        <p className="text-[#587393] mb-2">1. Upload files</p>
+        <p className="text-[#587393] mb-2 font-semibold">1. Upload files</p>
         <div
           className="bg-[#F1F4F9] border-dashed border-2 border-[#AFB9C8] p-4 rounded-lg text-center"
           onDragOver={handleDragOver}
@@ -127,6 +154,37 @@ const Sidebar: React.FC = () => {
             </div>
           )}
         </div>
+        <p className='text-gray-500 text-base text-center my-2'>OR</p>
+        <div className="relative">
+          <Input className="p-2 pl-10" placeholder="Past youtube video link here......" />
+          <img className="absolute top-[15px] left-3" src={youtube} alt="youtube" />
+        </div>
+        <p className="text-[#587393] mt-3 mb-2 font-semibold">2. select Number of speaker</p>
+        <TreeSelect
+            className='mt-1 w-full'
+            showSearch
+            style={{ width: '100%' }}
+            value={value}
+            dropdownStyle={{ maxHeight: 400, overflow: 'auto' }}
+            placeholder="Autodetected"
+            allowClear
+            treeDefaultExpandAll
+            onChange={onChange}
+            treeData={treeData}
+        />
+        <p className="text-[#587393] mt-3 mb-2 font-semibold">3. select language of the video</p>
+        <TreeSelect
+            className='mt-1 w-full mb-4'
+            showSearch
+            style={{ width: '100%' }}
+            value={value}
+            dropdownStyle={{ maxHeight: 400, overflow: 'auto' }}
+            placeholder="Select language"
+            allowClear
+            treeDefaultExpandAll
+            onChange={onChange}
+            treeData={treeData2}
+        />
       </Modal>
     </div>
   );
