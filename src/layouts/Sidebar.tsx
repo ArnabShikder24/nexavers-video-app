@@ -1,5 +1,5 @@
 import React from 'react';
-import { HomeFilled, TranslationOutlined, BellFilled, QuestionCircleFilled } from '@ant-design/icons';
+import { HomeFilled, TranslationOutlined, BellFilled, QuestionCircleFilled, PlusOutlined } from '@ant-design/icons';
 import type { MenuProps } from 'antd';
 import { Menu } from 'antd';
 
@@ -11,7 +11,7 @@ const items1: MenuProps['items'] = [
       return {
         key: `sub${index + 1}`,
         icon: item.icon,
-        label: item.label
+        label: item.label,
       };
     },
   );
@@ -32,6 +32,12 @@ const Sidebar : React.FC = () => {
     return (
         <div className='flex flex-col h-full justify-between'>
         <div>
+          <div className="flex justify-center">
+            <button className="flex items-center gap-3 px-10 py-2 rounded text-white bg-gradient-to-r from-[#022797] to-[#0266CA]">
+                <PlusOutlined />
+                <span className="text-sm">Upload New </span>
+            </button>
+          </div>
           <Menu
               mode="inline"
               defaultSelectedKeys={['1']}
