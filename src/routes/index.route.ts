@@ -1,7 +1,7 @@
 const pathnames = {
   example: "/example",
   home: "/",
-  LanguageTranslation: 'language-translation',
+  translate: 'translate',
   login: 'login',
   signUp: 'signup',
   notFound: "*",

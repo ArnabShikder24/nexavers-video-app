@@ -7,8 +7,7 @@ import {
   PlusOutlined,
   CloudUploadOutlined,
 } from "@ant-design/icons";
-import type { MenuProps } from "antd";
-import { Menu, Modal, Input, TreeSelect  } from "antd";
+import { Menu, Modal, Input, TreeSelect, MenuProps  } from "antd";
 import flim from '../assets/icons/Group 36099.svg';
 import youtube from '../assets/icons/youtube.png';
 
