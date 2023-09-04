@@ -174,7 +174,7 @@ const Sidebar: React.FC = () => {
         />
         <p className="text-[#587393] mt-3 mb-2 font-semibold">3. select language of the video</p>
         <TreeSelect
-            className='mt-1 w-full mb-4'
+            className='mt-1 w-full mb-5'
             showSearch
             style={{ width: '100%' }}
             value={value}
@@ -185,6 +185,7 @@ const Sidebar: React.FC = () => {
             onChange={onChange}
             treeData={treeData2}
         />
+        <button className="text-white w-full mb-2 py-2 rounded cursor-pointer bg-gradient-to-r from-[#022797] to-[#0266CA] font-semibold text-lg">Submit</button>
       </Modal>
     </div>
   );
