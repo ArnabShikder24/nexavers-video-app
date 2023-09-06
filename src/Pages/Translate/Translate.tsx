@@ -3,57 +3,15 @@ import { Layout } from "antd";
 import { Header } from "antd/es/layout/layout";
 import { Menu, MenuProps } from "antd";
 import {
-  DownOutlined,
-  HomeFilled,
   TranslationOutlined,
 } from "@ant-design/icons";
+import iconLogo from '../../assets/icons/iconLogo.svg';
 
 const { Content, Sider } = Layout;
 
 const headerHeight = 64; // You need to define headerHeight and colorBgContainer variables
 
 const items1: MenuProps["items"] = [
-  { icon: <HomeFilled />, label: "" },
-  { icon: <TranslationOutlined />, label: "" },
-  { icon: <HomeFilled />, label: "" },
-  { icon: <TranslationOutlined />, label: "" },
-  { icon: <HomeFilled />, label: "" },
-  { icon: <TranslationOutlined />, label: "" },
-  { icon: <HomeFilled />, label: "" },
-  { icon: <TranslationOutlined />, label: "" },
-  { icon: <HomeFilled />, label: "" },
-  { icon: <TranslationOutlined />, label: "" },
-  { icon: <HomeFilled />, label: "" },
-  { icon: <TranslationOutlined />, label: "" },
-  { icon: <HomeFilled />, label: "" },
-  { icon: <TranslationOutlined />, label: "" },
-  { icon: <HomeFilled />, label: "" },
-  { icon: <TranslationOutlined />, label: "" },
-  { icon: <HomeFilled />, label: "" },
-  { icon: <TranslationOutlined />, label: "" },
-  { icon: <HomeFilled />, label: "" },
-  { icon: <TranslationOutlined />, label: "" },
-  { icon: <HomeFilled />, label: "" },
-  { icon: <TranslationOutlined />, label: "" },
-  { icon: <HomeFilled />, label: "" },
-  { icon: <TranslationOutlined />, label: "" },
-  { icon: <HomeFilled />, label: "" },
-  { icon: <TranslationOutlined />, label: "" },
-  { icon: <HomeFilled />, label: "" },
-  { icon: <TranslationOutlined />, label: "" },
-  { icon: <HomeFilled />, label: "" },
-  { icon: <TranslationOutlined />, label: "" },
-  { icon: <HomeFilled />, label: "" },
-  { icon: <TranslationOutlined />, label: "" },
-  { icon: <HomeFilled />, label: "" },
-  { icon: <TranslationOutlined />, label: "" },
-  { icon: <HomeFilled />, label: "" },
-  { icon: <TranslationOutlined />, label: "" },
-  { icon: <HomeFilled />, label: "" },
-  { icon: <TranslationOutlined />, label: "" },
-  { icon: <HomeFilled />, label: "" },
-  { icon: <TranslationOutlined />, label: "" },
-  { icon: <HomeFilled />, label: "" },
   { icon: <TranslationOutlined />, label: "" },
 ].map((item, index) => {
   return {
@@ -69,32 +27,35 @@ const Translate = () => {
   return (
     <Layout style={{ minHeight: "100vh" }}>
       <Header
-        className="border"
+        className="border-b"
         style={{
           display: "flex",
           alignItems: "center",
           justifyContent: "space-between",
           background: "#fff",
-          padding: "0 25px",
+          padding: "0 25px 0 0",
           zIndex: "999999",
         }}
       >
-        <div className="flex items-center gap-4 border-l pl-4 mr-5 cursor-pointer">
-          <p>Shreyu</p>
-          <DownOutlined />
+        <div className="w-[70px] h-full border-r">
+          <img src={iconLogo} className="w-full h-full p-3" alt="logo" />
+        </div>
+        <div className="flex items-center gap-5 pl-4 mr-5">
+          <p className="text-[#0269D0] font-semibold cursor-pointer text-base">Save</p>
+          <p className="text-[#0269D0] font-semibold cursor-pointer text-base">Download</p>
         </div>
       </Header>
 
       <Layout>
         <div className="flex">
           <Sider
-            width={80}
+            width={70}
             style={{
               height: `calc(100vh - ${headerHeight}px)`,
               background: "#fff",
             }}
           >
-            <div className="border h-full overflow-y-auto">
+            <div className="border-r h-full overflow-y-auto">
             <Menu
               mode="inline"
               defaultSelectedKeys={["1"]}
@@ -112,23 +73,21 @@ const Translate = () => {
             }}
           >
             <div
-              className="border h-full overflow-y-auto"
+              className="border-r h-full overflow-y-auto"
               style={{
                 width: "200px",
                 background: "#fff",
                 padding: "8px",
               }}
             >
-                          Second Sidebar
-                          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quis voluptatum voluptas optio architecto quos maiores et quia. Sunt, perspiciatis dolores nesciunt molestiae harum laboriosam doloribus beatae sed quaerat? Unde nam illum labore architecto qui! Id dolorem voluptatibus inventore architecto officia voluptas omnis, voluptatem accusantium molestiae. Ea perspiciatis aliquam voluptas atque explicabo quaerat nesciunt, nobis, aut, amet dicta eos repudiandae cupiditate tempora autem sequi quos at sit delectus laudantium quae pariatur omnis dignissimos! Omnis doloremque quod ducimus assumenda ratione ut tempore dolor ipsam officia impedit vitae debitis sapiente cupiditate suscipit eos voluptates consequuntur, eius modi harum recusandae? Quod neque deserunt vero.
-                          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quis voluptatum voluptas optio architecto quos maiores et quia. Sunt, perspiciatis dolores nesciunt molestiae harum laboriosam doloribus beatae sed quaerat? Unde nam illum labore architecto qui! Id dolorem voluptatibus inventore architecto officia voluptas omnis, voluptatem accusantium molestiae. Ea perspiciatis aliquam voluptas atque explicabo quaerat nesciunt, nobis, aut, amet dicta eos repudiandae cupiditate tempora autem sequi quos at sit delectus laudantium quae pariatur omnis dignissimos! Omnis doloremque quod ducimus assumenda ratione ut tempore dolor ipsam officia impedit vitae debitis sapiente cupiditate suscipit eos voluptates consequuntur, eius modi harum recusandae? Quod neque deserunt vero.
+              Second Sidebar
             </div>
           </Sider>
         </div>
         <Layout
           style={{
             height: `calc(100vh - ${headerHeight}px)`,
-            background: "#fff",
+            background: colorBgContainer,
             overflowY: "auto",
           }}
         >
@@ -141,6 +100,7 @@ const Translate = () => {
             }}
           >
             <h1 className="">hello world</h1>
+
           </Content>
         </Layout>
       </Layout>
