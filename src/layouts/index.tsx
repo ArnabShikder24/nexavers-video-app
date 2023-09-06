@@ -4,10 +4,10 @@ import NavBar from './NavBar';
 import { Outlet } from 'react-router-dom';
 import Sidebar from './Sidebar';
 
+const headerHeight = 65;
 const { Content, Sider } = Layout;
 
 const MainLayout = () => {
-    const headerHeight = 65;
   const {
     token: { colorBgContainer },
   } = theme.useToken();

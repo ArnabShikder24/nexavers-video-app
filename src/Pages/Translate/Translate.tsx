@@ -140,7 +140,6 @@ const Translate: React.FC = () => {
         >
           <Content
             style={{
-              padding: '10px 20px',
               margin: 0,
               minHeight: 280,
               background: colorBgContainer,
