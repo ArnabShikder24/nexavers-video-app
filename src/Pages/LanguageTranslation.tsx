@@ -62,7 +62,7 @@ const Segment: React.FC = () => {
                                         <source src="" type="" />
                                     </audio>
                                 </div>
-                            </div>
+                            </div>  
                             <div>
                                 <div className='flex items-center gap-2 cursor-pointer'>
                                     <CaretDownFilled className='text-lg mb-1' />
@@ -102,7 +102,7 @@ const LanguageTranslation : React.FC = () => {
     const [value, setValue] = useState<string>();
     const gradientStyle = {
         background: 'linear-gradient(0deg, #0269D0, #0269D0), linear-gradient(0deg, rgba(153, 153, 153, 0.5), rgba(153, 153, 153, 0.5))',
-      };
+    };
 
     const onChange = (newValue: string) => {
       setValue(newValue);
