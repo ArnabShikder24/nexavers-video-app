@@ -6,10 +6,11 @@ import {
   TranslationOutlined,
 } from "@ant-design/icons";
 import iconLogo from '../../assets/icons/iconLogo.svg';
+import TranslateContainer from "./TranslateContainer";
 
 const { Content, Sider } = Layout;
 
-const headerHeight = 64; // You need to define headerHeight and colorBgContainer variables
+const headerHeight = 64; 
 
 const items1: MenuProps["items"] = [
   { icon: <TranslationOutlined />, label: "" },
@@ -21,7 +22,49 @@ const items1: MenuProps["items"] = [
   };
 });
 
-const Translate = () => {
+const SecondSidebar: React.FC = () => {
+  return (
+    <div>
+      <div className="border-b">
+        <div className="flex items-center justify-between my-3 px-3">
+          <p className="font-semibold">From</p>
+          <select className="border-0 w-24 h-8" name="" id="">
+            <option value="English">English</option>
+            </select>
+        </div>
+        <div className="flex items-center justify-between mb-5 px-3">
+          <p className="font-semibold">To</p>
+          <select className="border-0 bg-[#0269D0] text-white rounded w-24 h-8" name="" id="">
+            <option value="Hindi">Hindi</option>
+            </select>
+        </div>
+      </div>
+      <div className="border-b mt-2">
+        <p className="font-semibold px-3">Choose voices</p>
+        <p className="text-[10px] px-3">2 Actors detected </p>
+        <div className="flex items-center justify-between my-5 px-4">
+          <p className="font-semibold">1</p>
+          <select className="border-0 bg-[#0269D0] text-white rounded w-28 h-8" name="" id="">
+            <option value="Choose voice">Choose voice</option>
+            </select>
+        </div>
+        <div className="flex items-center justify-between mb-8 px-4">
+          <p className="font-semibold">2</p>
+          <select className="border-0 bg-[#0269D0] text-white rounded w-28 h-8" name="" id="">
+            <option value="Choose voice">Choose voice</option>
+            </select>
+        </div>
+        <div className="text-center mb-4">
+          <button className="px-6 py-1 rounded text-white bg-gradient-to-r from-[#022797] to-[#0266CA]">
+            <span className="text-sm">Apply voices</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+const Translate: React.FC = () => {
   const colorBgContainer = "#f0f2f5";
 
   return (
@@ -37,8 +80,13 @@ const Translate = () => {
           zIndex: "999999",
         }}
       >
-        <div className="w-[70px] h-full border-r">
-          <img src={iconLogo} className="w-full h-full p-3" alt="logo" />
+        <div className="flex items-center border-r">
+          <div className="w-[70px] h-full border-r">
+            <img src={iconLogo} className="w-full h-full p-4" alt="logo" />
+          </div>
+          <div className="w-[199px] h-full text-center">
+            <p className="font-semibold text-xl">Translate</p>
+          </div>
         </div>
         <div className="flex items-center gap-5 pl-4 mr-5">
           <p className="text-[#0269D0] font-semibold cursor-pointer text-base">Save</p>
@@ -64,7 +112,6 @@ const Translate = () => {
             />
             </div>
           </Sider>
-          {/* Add a second sidebar here */}
           <Sider
             width={200}
             style={{
@@ -77,10 +124,10 @@ const Translate = () => {
               style={{
                 width: "200px",
                 background: "#fff",
-                padding: "8px",
+                padding: "8px 0",
               }}
             >
-              Second Sidebar
+              <SecondSidebar />
             </div>
           </Sider>
         </div>
@@ -99,8 +146,7 @@ const Translate = () => {
               background: colorBgContainer,
             }}
           >
-            <h1 className="">hello world</h1>
-
+            <TranslateContainer />
           </Content>
         </Layout>
       </Layout>
