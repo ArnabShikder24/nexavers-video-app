@@ -77,7 +77,7 @@ const Translate: React.FC = () => {
           justifyContent: "space-between",
           background: "#fff",
           padding: "0 25px 0 0",
-          zIndex: "999999",
+          zIndex: "999",
         }}
       >
         <div className="flex items-center border-r">

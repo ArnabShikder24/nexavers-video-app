@@ -10,7 +10,7 @@ const { Header } = Layout;
 const NavBar: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
     return (
-      <Header style={{display: 'flex', alignItems: 'center', justifyContent: 'space-between', background: '#fff', padding: '0 25px', boxShadow: 'rgba(0, 0, 0, 0.1) 5px 6px 7px 0px', zIndex: '999999'}}>
+      <Header style={{display: 'flex', alignItems: 'center', justifyContent: 'space-between', background: '#fff', padding: '0 25px', boxShadow: 'rgba(0, 0, 0, 0.1) 5px 6px 7px 0px', zIndex: '999'}}>
         <img className="cursor-pointer" src={logo} alt="Logo" />
         <div onClick={() => setIsOpen(!isOpen)} className="flex items-center gap-4 border-l pl-4 mr-5 cursor-pointer">
           <img src={user} alt="user" />

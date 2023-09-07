@@ -55,6 +55,11 @@ const TranslateContainer = () => {
                 <Segment />
                 <Segment />
                 <Segment />
+                <Segment />
+                <Segment />
+                <Segment />
+                <Segment />
+                <Segment />
             </div>
             <div className='w-[30%] px-4 py-3'>
                 Output
