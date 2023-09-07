@@ -56,7 +56,8 @@ const treeData2 = [
 const Sidebar: React.FC = () => {
   const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
   const [selectedFile, setSelectedFile] = useState<File | null>(null);
-  const [value, setValue] = useState<string>();
+  const [speker, setSpeker] = useState<string>();
+  const [lan, setLan] = useState<string>();
 
   const handleFileSelect = (e: React.ChangeEvent<HTMLInputElement>) => {
     const file = e.target.files?.[0];
@@ -73,9 +74,14 @@ const Sidebar: React.FC = () => {
     e.preventDefault();
   };
 
-  const onChange = (newValue: string) => {
-    setValue(newValue);
+  const onChangeSpeker = (newValue: string) => {
+    setSpeker(newValue);
   };
+
+  const onChangeLan = (newValue: string) => {
+    setLan(newValue);
+  };
+
   return (
     <div className="flex flex-col h-full justify-between">
       <div>
@@ -163,12 +169,12 @@ const Sidebar: React.FC = () => {
             className='mt-1 w-full'
             showSearch
             style={{ width: '100%' }}
-            value={value}
+            value={speker}
             dropdownStyle={{ maxHeight: 400, overflow: 'auto' }}
             placeholder="Autodetected"
             allowClear
             treeDefaultExpandAll
-            onChange={onChange}
+            onChange={onChangeSpeker}
             treeData={treeData}
         />
         <p className="text-[#587393] mt-3 mb-2 font-semibold">3. select language of the video</p>
@@ -176,12 +182,12 @@ const Sidebar: React.FC = () => {
             className='mt-1 w-full mb-5'
             showSearch
             style={{ width: '100%' }}
-            value={value}
+            value={lan}
             dropdownStyle={{ maxHeight: 400, overflow: 'auto' }}
             placeholder="Select language"
             allowClear
             treeDefaultExpandAll
-            onChange={onChange}
+            onChange={onChangeLan}
             treeData={treeData2}
         />
         <button className="text-white w-full mb-2 py-2 rounded cursor-pointer bg-gradient-to-r from-[#022797] to-[#0266CA] font-semibold text-lg">Submit</button>
