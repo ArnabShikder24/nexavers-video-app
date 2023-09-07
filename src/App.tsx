@@ -7,6 +7,7 @@ import Home from "./Pages/Home";
 import Login from "./Pages/Login";
 import SignUp from "./Pages/SignUp";
 import Translate from "./Pages/Translate/Translate";
+import Profile from "./Pages/Profile";
 
 const App: React.FC = () => {
   return (
@@ -14,6 +15,7 @@ const App: React.FC = () => {
       <Routes>
         <Route path={pathnames.home} element={<MainLayout />}>
           <Route path={pathnames.home} element={<Home />} />
+          <Route path={pathnames.profile} element={<Profile />} />
         </Route>
         <Route path={pathnames.translate} element={<Translate />} />
         <Route path={pathnames.login} element={<Login />} />

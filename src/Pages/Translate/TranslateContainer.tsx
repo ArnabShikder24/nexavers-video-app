@@ -34,7 +34,7 @@ const Segment: React.FC = () => {
                     </div>
                     <div className='flex items-center gap-4'>
                         <p className='w-[80px] font-semibold text-base'>Edit text :</p>
-                        <Input className='w-96' placeholder="" />
+                        <Input className='w-[45%]' placeholder="" />
                         <p className="border border-[#0269D0] px-2 py-1 cursor-pointer rounded">Add new version</p>
                         <p className="border border-[#0269D0] px-2 py-1 cursor-pointer rounded">Generate next step</p>
                     </div>

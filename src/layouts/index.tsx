@@ -21,7 +21,7 @@ const MainLayout = () => {
         <Layout style={{ height: `calc(100vh - ${headerHeight}px)`, padding: '0 24px 24px', background: colorBgContainer, overflowY: 'auto',}}>
           <Content
             style={{
-              padding: 24,
+              padding: '24px 10px',
               margin: 0,
               minHeight: 280,
               background: '#fff',

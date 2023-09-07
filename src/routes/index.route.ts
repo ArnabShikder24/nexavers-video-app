@@ -4,6 +4,7 @@ const pathnames = {
   translate: 'translate',
   login: 'login',
   signUp: 'signup',
+  profile: 'profile',
   notFound: "*",
 };
 
