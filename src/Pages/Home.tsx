@@ -4,7 +4,7 @@ import qus from '../assets/SVG/userQus.svg';
 
 const Home: React.FC = () => {
     return (
-        <div className='w-[980px] mx-auto h-full'>
+        <div className='w-[1000px] mx-auto h-full'>
             <div className='flex items-center h-full'>
                 <div className="flex justify-between">
                     {/* <div className="rounded-lg text-center border-4 border-[#0269D0] px-32 py-12">
@@ -28,7 +28,7 @@ const Home: React.FC = () => {
                             </button>
                         </div>
                     </div>
-                    <div className='text-center w-[540px] pt-14'>
+                    <div className='text-center w-[580px] pt-14'>
                             <div className='flex items-center'>
                                 <div className='space-y-4 text-base w-[140px]'>
                                     <h1 className='text-[#F02190]'>step 1</h1>
@@ -40,7 +40,7 @@ const Home: React.FC = () => {
                                 <div>
                                     <h1 className='text-xl font-semibold text-[#0260C8] mb-4'>Don’t know how to do?</h1>   
                                     <p className='text-base text-black mb-10'>Don’t worry here is the flow explore It.</p>
-                                    <div className='border-2 border-[#F02190] rounded-xl w-[400px] h-[250px]'>
+                                    <div className='border-2 border-[#F02190] rounded-xl w-[430px] h-[250px]'>
                                     </div>
                                 </div>
                             </div>

@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import logo from '../assets/icons/logo.svg';
 import user from '../assets/icons/Mask group.png';
-import { Layout } from 'antd';
+import { Layout, Modal } from 'antd';
 import { DownOutlined, UserOutlined, LogoutOutlined, DollarOutlined } from '@ant-design/icons';
 import userLogo from '../assets/images/Mask group.png';
 
@@ -9,6 +9,7 @@ const { Header } = Layout;
 
 const NavBar: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
     return (
       <Header style={{display: 'flex', alignItems: 'center', justifyContent: 'space-between', background: '#fff', padding: '0 25px', boxShadow: 'rgba(0, 0, 0, 0.1) 5px 6px 7px 0px', zIndex: '999'}}>
         <img className="cursor-pointer" src={logo} alt="Logo" />
@@ -35,7 +36,7 @@ const NavBar: React.FC = () => {
                   <DollarOutlined className="text-xl" />
                   <p className='text-base'>Payments & charges</p>
                 </div>
-                <div className='flex gap-3 items-center mt-2 cursor-pointer'>
+                <div onClick={() => setIsModalOpen(true)} className='flex gap-3 items-center mt-2 cursor-pointer'>
                   <LogoutOutlined className="text-xl" />
                   <p className='text-base'>Logout</p>
                 </div>
@@ -43,6 +44,20 @@ const NavBar: React.FC = () => {
             </div>
           )
         }
+        {/* Modal section */}
+      <Modal
+        title={
+          <div className='text-center'>
+            <img className='inline-block' src={userLogo} alt="user_logo" />
+            <h1 className="text-semibold text-lg text-center">Shreyu</h1>
+          </div>
+        }
+        open={isModalOpen}
+        onCancel={() => setIsModalOpen(false)}
+        footer={null}
+      >
+        <p className='text-center text-xl font-semibold'>Are you sure you want to log out?</p>
+      </Modal>
       </Header>
     );
 };
