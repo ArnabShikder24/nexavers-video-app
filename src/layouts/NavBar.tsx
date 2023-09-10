@@ -45,19 +45,23 @@ const NavBar: React.FC = () => {
           )
         }
         {/* Modal section */}
-      <Modal
-        title={
-          <div className='text-center'>
-            <img className='inline-block' src={userLogo} alt="user_logo" />
-            <h1 className="text-semibold text-lg text-center">Shreyu</h1>
+        <Modal
+          title={
+            <div className='text-center'>
+              <img className='inline-block mb-1' src={userLogo} alt="user_logo" />
+              <h1 className="text-semibold text-lg text-center">Shreyu</h1>
+            </div>
+          }
+          open={isModalOpen}
+          footer={null}
+          closable={false}
+        >
+          <p className='text-center text-xl font-semibold mt-5'>Are you sure you want to log out?</p>
+          <div className='flex items-center gap-5 justify-center my-5 pt-2'>
+            <button onClick={() => setIsModalOpen(false)} className='text-[#0269D0] text-base font-semibold py-2 px-5 cursor-pointer'>Cancel</button>
+            <button className='text-red-500 text-base font-semibold border border-red-500 hover:text-white hover:bg-red-500 rounded py-2 px-5 cursor-pointer'>Logout</button>
           </div>
-        }
-        open={isModalOpen}
-        onCancel={() => setIsModalOpen(false)}
-        footer={null}
-      >
-        <p className='text-center text-xl font-semibold'>Are you sure you want to log out?</p>
-      </Modal>
+        </Modal>
       </Header>
     );
 };
