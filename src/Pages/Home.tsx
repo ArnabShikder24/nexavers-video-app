@@ -4,7 +4,7 @@ import qus from '../assets/SVG/userQus.svg';
 
 const Home: React.FC = () => {
     return (
-        <div className='w-[1000px] mx-auto h-full'>
+        <div className='w-[1080px] mx-auto h-full'>
             <div className='flex items-center h-full'>
                 <div className="flex justify-between">
                     {/* <div className="rounded-lg text-center border-4 border-[#0269D0] px-32 py-12">
